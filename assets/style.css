@@ -1,0 +1,250 @@
+/* Smart Crop AI — Modern AgriTech Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #059669;
+  --primary-dark: #064e3b;
+  --primary-darker: #022c22;
+  --primary-light: #10b981;
+  --primary-subtle: #d1fae5;
+  --accent-gold: #f59e0b;
+  --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f8fafc 100%);
+  --sidebar-bg: #064e3b;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+}
+
+/* Global Font Settings */
+html, body, [class*="css"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  color: #064e3b !important;
+  letter-spacing: -0.02em;
+}
+
+/* Streamlit Main Container */
+.main .block-container {
+  padding-top: 1.8rem;
+  padding-bottom: 3rem;
+  max-width: 1200px;
+}
+
+/* Sidebar Customization */
+section[data-testid="stSidebar"] {
+  background-color: var(--sidebar-bg);
+  background-image: linear-gradient(180deg, #022c22 0%, #064e3b 100%);
+}
+
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] span,
+section[data-testid="stSidebar"] label {
+  color: #ecfdf5 !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+  color: #a7f3d0 !important;
+}
+
+/* Sidebar navigation links */
+[data-testid="stSidebarNav"] a {
+  border-radius: var(--border-radius-sm);
+  color: #d1fae5 !important;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+[data-testid="stSidebarNav"] [aria-current="page"] {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Header & Banner Cards */
+.hero-banner {
+  background: linear-gradient(135deg, #064e3b 0%, #059669 60%, #10b981 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 2.2rem 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: "🌾";
+  position: absolute;
+  right: 20px;
+  bottom: -15px;
+  font-size: 8rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.hero-title {
+  color: #ffffff !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.hero-subtitle {
+  color: #d1fae5;
+  font-size: 1.05rem;
+  font-weight: 400;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Glass & Clean Cards */
+.agri-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+  margin-bottom: 1.2rem;
+}
+
+.agri-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.agri-card-highlight {
+  border-top: 4px solid var(--primary-light);
+}
+
+/* Prediction Highlight Card */
+.recommendation-hero {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 2px solid #10b981;
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.crop-result-title {
+  color: #064e3b !important;
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  margin: 0.5rem 0 !important;
+  letter-spacing: -0.03em;
+}
+
+.crop-badge {
+  display: inline-block;
+  background-color: #064e3b;
+  color: #ffffff;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Metric KPI Mini Cards */
+.kpi-container {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius-md);
+  padding: 1.2rem;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid #10b981;
+}
+
+.kpi-title {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.kpi-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #064e3b;
+  line-height: 1.1;
+}
+
+.kpi-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Buttons */
+.stButton > button {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.25);
+  transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 12px -2px rgba(5, 150, 105, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Input Fields & Sliders */
+.stSlider label, .stNumberInput label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.app-footer a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
